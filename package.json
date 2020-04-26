@@ -1,0 +1,32 @@
+{
+  "name": "gulp-starter",
+  "version": "1.0.0",
+  "description": "Gulp starter file for front end projects",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.5",
+    "@babel/register": "^7.9.0",
+    "browser-sync": "^2.26.7",
+    "del": "^5.1.0",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-cheerio": "^1.0.0",
+    "gulp-cheerio-clean-svg": "github:Hiswe/gulp-cheerio-clean-svg",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-ext-replace": "^0.3.0",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-svg-sprite": "^1.5.0",
+    "gulp-svgmin": "^2.2.0",
+    "gulp-uglify": "^3.0.2",
+    "imagemin-webp": "^5.1.0"
+  }
+}
