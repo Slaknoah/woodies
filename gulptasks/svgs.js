@@ -6,12 +6,18 @@ import svgSprite from 'gulp-svg-sprite';
 
 
 const paths = {
-    src: 'src/svg/**/*svg',
-    dest: 'dist/assets/svg/'
+    sprite: {
+        src: 'src/svg/**/*svg',
+        dest: 'dist/assets/svg/'
+    },
+    copy: {
+        src: 'src/svg-elements/**/*svg',
+        dest: 'dist/assets/svg/'
+    },
 }
 
 const sprite = () => {
-    return src(paths.src)
+    return src(paths.sprite.src)
             .pipe( svgmin({ js2svg: { pretty: true } }) )
             .pipe( cheerio(cleanSvg({
                 removeComments: true,
@@ -23,7 +29,9 @@ const sprite = () => {
                     }
                 }
             }) )
-            .pipe( dest(paths.dest) );
+            .pipe( dest(paths.sprite.dest) );
 }
 
-export { paths, sprite }
+const copy = () => src( paths.copy.src ).pipe(dest( paths.copy.dest ));
+
+export { paths, sprite, copy }

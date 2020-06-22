@@ -1,33 +1,20 @@
-import {src, dest} from 'gulp';
-import babel from 'gulp-babel';
-import uglify from 'gulp-uglify';
-import concat from 'gulp-concat';
+import { src, dest } from 'gulp';
+import compiler from 'webpack';
+import webpack from 'webpack-stream';
 
 const paths = {
-    common: {
-        src: 'src/scripts/common/**/*.js',
-        dest: 'dist/assets/scripts/'
-    },
-    pages: {
-        src: 'src/scripts/pages/**/*.js',
-        dest: 'dist/assets/scripts/pages/'
-    }
+    src: 'src/scripts/**/*.js',
+    dest: 'dist/assets/scripts/'
 }
 
 const commonJS = () => {
-    return src(paths.common.src, { sourcemaps: true })
-            .pipe(babel())
-            .pipe(uglify())
-            .pipe(concat('common.min.js'))
-            .pipe(dest(paths.common.dest))
+    return src(paths.src, { sourcemaps: true })
+            .pipe(webpack( 
+                require('../webpack.config'), 
+                compiler
+            ))
+            .pipe(dest(paths.dest))
 }
 
-const pagesJS = () => {
-    return src(paths.pages.src, { sourcemaps: true })
-            .pipe(babel())
-            .pipe(uglify())
-            .pipe(dest(paths.pages.dest))
-}
-
-export { paths, commonJS, pagesJS }
+export { paths, commonJS }
 

@@ -1,18 +1,22 @@
 {
-  "name": "gulp-starter",
+  "name": "Woodies",
   "version": "1.0.0",
-  "description": "Gulp starter file for front end projects",
+  "description": "Front end practise project",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "jquery": "^3.5.1",
+    "swiper": "^5.3.8"
+  },
   "devDependencies": {
-    "@babel/core": "^7.9.0",
-    "@babel/preset-env": "^7.9.5",
+    "@babel/core": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
     "@babel/register": "^7.9.0",
+    "babel-loader": "^8.1.0",
     "browser-sync": "^2.26.7",
     "del": "^5.1.0",
     "gulp": "^4.0.2",
@@ -27,6 +31,8 @@
     "gulp-svg-sprite": "^1.5.0",
     "gulp-svgmin": "^2.2.0",
     "gulp-uglify": "^3.0.2",
-    "imagemin-webp": "^5.1.0"
+    "imagemin-webp": "^5.1.0",
+    "webpack": "^4.43.0",
+    "webpack-stream": "^5.2.1"
   }
 }
