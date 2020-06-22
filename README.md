@@ -1,4 +1,4 @@
 # gulp-starter
-Gulp frontend project starter
+Woodies project
 
-Includes my best practises in web development
+Practise web page for furniture company landing page
